@@ -11,8 +11,8 @@ if [ -z "${VERSION}" ]; then
     exit 1
 fi
 
-if [ -z "${APP_NAME}" ]; then
-    echo "Please set your Application name in the APP_NAME env var."
+if [ -z "${REPO}" ]; then
+    echo "Please set your Application name in the REPO env var."
     exit 1
 fi
 
@@ -20,7 +20,7 @@ fi
 ./scripts/compile.sh
 
 
-if [ -d pkg ];
+if [ -d pkg ];then
     rm -rf ./pkg/dist
 fi 
 
@@ -28,7 +28,7 @@ fi
 mkdir -p ./pkg/dist
 for PLATFORM in $(find ./pkg -mindepth 1 -maxdepth 1 -type d); do
     PLATFORM_NAME=$(basename ${PLATFORM})
-    ARCHIVE_NAME=${APP_NAME}_${VERSION}_${PLATFORM_NAME}
+    ARCHIVE_NAME=${REPO}_${VERSION}_${PLATFORM_NAME}
 
     if [ $PLATFORM_NAME = "dist" ]; then
         continue
