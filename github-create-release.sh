@@ -43,4 +43,4 @@ RELEASE_RESPONSE=$(
     -H "Content-Type: application/json" \
     -d "${INPUT}")
 
-echo $RELEASE_RESPONSE | jq ".id" > GITHUB_RELEASE_ID
+echo $RELEASE_RESPONSE | jq ".id" > .GITHUB_RELEASE_ID
