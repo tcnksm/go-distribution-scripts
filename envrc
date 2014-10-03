@@ -1,4 +1,0 @@
-export VERSION=""
-export GITHUB_TOKEN=""
-export BINTRAY_API_KEY=""
-export REPO=""

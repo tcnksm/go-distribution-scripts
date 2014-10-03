@@ -1,11 +1,10 @@
-Golang compile scripts
+Scripts for distributing golang project [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/tcnksm/go-distribution-scripts/blob/master/LICENCE)
 ====
 
-These scripts :
+This is my small scripts for distributing golang projects. They will:
 
-- Cross compile with [gox](https://github.com/mitchellh/gox)
+- Cross compile with [mitchell/gox](https://github.com/mitchellh/gox)
 - Package binary as .zip file
-- Upload packages to [Github Release](https://developer.github.com/v3/repos/releases/) or [bintray](https://bintray.com/)
 
 ## Install
 
@@ -13,10 +12,16 @@ These scripts are supposed to be used in golang project directory.
 
 ```bash
 $ cd path-to-your-project
-$ git clone https://github.com/tcnksm/go-compile-scripts scripts
+$ git clone https://github.com/tcnksm/go-distribution-scripts scripts
 ```
 
-## How to use
+## Usage
+
+Set version:
+
+```bash
+$ export VERSION="" 
+```
 
 Compile:
 
@@ -29,38 +34,6 @@ Package binary as .zip file:
 ```bash
 $ ./scripts/package.sh
 ```
-
-Create release at Github and upload it:
-
-```bash
-$ ./scripts/github-create-release.sh
-$ ./scripts/github-upload-asset.sh
-```
-
-Uploat to bintray:
-
-```bash
-$ ./scripts/bintray-upload-asset.sh
-```
-
-## Environmetal variables
-
-You need to set belows:
-
-```bash
-export VERSION="" 
-export GITHUB_TOKEN=""
-export BINTRAY_API_KEY=""
-export REPO="" # Repository name
-```
-
-You can use [direnv](https://github.com/zimbatm/direnv).
-
-## Reference
-
-- [wercker/step-github-create-release](https://github.com/wercker/step-github-create-release)
-- [wercker/step-github-upload-asset](https://github.com/wercker/step-github-upload-asset)
-- [hashicorp/consul/scripts](https://github.com/hashicorp/consul/blob/master/scripts)
 
 ## Author
 
